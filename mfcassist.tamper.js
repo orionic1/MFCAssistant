@@ -165,6 +165,8 @@ if (0 === window.location.href.indexOf('http://www.myfreecams.com/mfc2/static/pl
 
             divNav.appendChild(countdownFieldSet);
 
+            //TODO: create custom message for autopost
+
             //create highest tip span
             var statsFieldSet = document.createElement('fieldset');
             var statsLegend = document.createElement('legend');
@@ -274,8 +276,11 @@ if (0 === window.location.href.indexOf('http://www.myfreecams.com/mfc2/static/pl
             if (killPosting)
                 return;
 
+            //store old message first
+            oldMsg = txtInput.value;
             txtInput.value = msg;
             btnSend.click();
+            txtInput.value = oldMsg;
         }
         function showCurrentCountDown() {
             //maAlert("Model Assist: " + countDown + " tokens left on countdown.");
